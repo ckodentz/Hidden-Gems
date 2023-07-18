@@ -1,0 +1,10 @@
+.master-banner {
+  background-image: url("./images/pexels-david-bartus-366791.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 56px);
+}
+
+.master-banner h2 {
+  font-size: 18px;
+}/*# sourceMappingURL=Home.css.map */
