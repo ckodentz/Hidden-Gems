@@ -29,7 +29,7 @@ export default function ProfileScreen() {
         const fetchUser = async () => {
             try {
                 const response = await axios.get(
-                    `https://hidden-gems-backend.onrender.com/users/${userId}`
+                    `http://localhost:4000/users/${userId}`
                 );
                 setUser(response.data);
             } catch (error) {
@@ -44,12 +44,9 @@ export default function ProfileScreen() {
 
     const handleLogout = async () => {
         try {
-            await axios.put(
-                `https://hidden-gems-backend.onrender.com/users/isOnline/${userId}`,
-                {
-                    isOnline: false,
-                }
-            );
+            await axios.put(`http://localhost:4000/users/isOnline/${userId}`, {
+                isOnline: false,
+            });
         } catch (error) {
             console.log(error);
         }
@@ -59,7 +56,7 @@ export default function ProfileScreen() {
     const handleSubmit = async () => {
         try {
             await axios.put(
-                `https://hidden-gems-backend.onrender.com/users/update-profile/${user._id}`,
+                `http://localhost:4000/users/update-profile/${user._id}`,
                 {
                     userName,
                     password,

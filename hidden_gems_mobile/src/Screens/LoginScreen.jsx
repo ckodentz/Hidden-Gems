@@ -18,7 +18,7 @@ export default function LoginScreen({ onLogin, onSignup }) {
 
         try {
             const response = await axios.post(
-                "https://hidden-gems-backend.onrender.com/users/login",
+                "http://localhost:4000/users/login",
                 { userName, password }
             );
 
@@ -27,7 +27,7 @@ export default function LoginScreen({ onLogin, onSignup }) {
 
                 // Make PUT request to update isOnline to true
                 await axios.put(
-                    `https://hidden-gems-backend.onrender.com/users/isOnline/${response.data._id}`,
+                    `http://localhost:4000/users/isOnline/${response.data._id}`,
                     { isOnline: true }
                 );
             }

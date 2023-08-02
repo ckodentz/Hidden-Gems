@@ -17,7 +17,7 @@ export default function SignUpScreen({ onSignup }) {
         }
 
         // Send POST request to server
-        fetch("https://hidden-gems-backend.onrender.com/users/sign-up", {
+        fetch("http://localhost:4000/users/sign-up", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

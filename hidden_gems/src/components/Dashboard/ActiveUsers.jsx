@@ -12,7 +12,7 @@ function ActiveUsers() {
 
     useEffect(() => {
         axios
-            .get("https://hidden-gems-backend.onrender.com/users/active-users")
+            .get("http://localhost:4000/users/active-users")
             .then((response) => {
                 setUsers(response.data);
             });

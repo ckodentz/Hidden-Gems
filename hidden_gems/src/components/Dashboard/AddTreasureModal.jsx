@@ -26,10 +26,7 @@ function AddTreasureModal({ show, onHide }) {
             reward,
         };
         axios
-            .post(
-                "https://hidden-gems-backend.onrender.com/treasures/add",
-                newTreasure
-            )
+            .post("http://localhost:4000/treasures/add", newTreasure)
             .then((response) => {
                 console.log(response.data);
                 onHide();

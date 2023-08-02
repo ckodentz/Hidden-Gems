@@ -32,13 +32,10 @@ export default function Home() {
             setLocation(coords);
 
             // Make API call to update user location in MongoDB
-            axios.put(
-                `https://hidden-gems-backend.onrender.com/users/update-location/${userId}`,
-                {
-                    latitude: coords.latitude,
-                    longitude: coords.longitude,
-                }
-            );
+            axios.put(`http://localhost:4000/users/update-location/${userId}`, {
+                latitude: coords.latitude,
+                longitude: coords.longitude,
+            });
         } catch (error) {
             setErrorMsg(error.message);
         } finally {
@@ -52,9 +49,7 @@ export default function Home() {
 
     useEffect(() => {
         axios
-            .get(
-                "https://hidden-gems-backend.onrender.com/treasures/active-treasures"
-            )
+            .get("http://localhost:4000/treasures/active-treasures")
             .then((response) => {
                 setActiveTreasures(response.data);
             });
@@ -97,7 +92,7 @@ export default function Home() {
                                                     ) {
                                                         axios
                                                             .put(
-                                                                `https://hidden-gems-backend.onrender.com/treasures/update-treasure/${foundTreasure._id}`,
+                                                                `http://localhost:4000/treasures/update-treasure/${foundTreasure._id}`,
                                                                 {
                                                                     status: "claimed",
                                                                 }
@@ -105,7 +100,7 @@ export default function Home() {
                                                             .then(() => {
                                                                 axios
                                                                     .put(
-                                                                        `https://hidden-gems-backend.onrender.com/users/add-treasure`,
+                                                                        `http://localhost:4000/users/add-treasure`,
                                                                         {
                                                                             treasureId:
                                                                                 foundTreasure._id,
@@ -154,7 +149,7 @@ export default function Home() {
                                         [foundTreasure._id]: true,
                                     }));
                                 },
-                                style: "cancel",
+                                 style: "cancel",
                             },
                         ]
                     );

@@ -12,7 +12,7 @@ export default function MyTreasures() {
         const fetchTreasures = async () => {
             try {
                 const response = await axios.get(
-                    `https://hidden-gems-backend.onrender.com/users/my-treasure/${userId}`
+                    `http://localhost:4000/users/my-treasure/${userId}`
                 );
                 setTreasures(response.data);
             } catch (error) {

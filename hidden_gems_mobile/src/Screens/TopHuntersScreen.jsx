@@ -17,7 +17,7 @@ export default TopHunters = () => {
 
     useEffect(() => {
         axios
-            .get("https://hidden-gems-backend.onrender.com/users/top-hunters")
+            .get("http://localhost:4000/users/top-hunters")
             .then((response) => {
                 // sort the users based on the treasureList length
                 const sortedUsers = response.data.sort(

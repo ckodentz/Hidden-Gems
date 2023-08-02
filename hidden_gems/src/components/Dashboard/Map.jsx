@@ -11,7 +11,7 @@ function Map() {
 
     useEffect(() => {
         axios
-            .get("https://hidden-gems-backend.onrender.com/users/active-users")
+            .get("http://localhost:4000/users/active-users")
             .then((response) => {
                 setUsers(response.data);
             });
@@ -19,9 +19,7 @@ function Map() {
 
     useEffect(() => {
         axios
-            .get(
-                "https://hidden-gems-backend.onrender.com/treasures/active-treasures"
-            )
+            .get("http://localhost:4000/treasures/active-treasures")
             .then((response) => {
                 setActiveTreasures(response.data);
             });

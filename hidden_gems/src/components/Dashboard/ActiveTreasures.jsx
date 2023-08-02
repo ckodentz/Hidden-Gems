@@ -14,9 +14,7 @@ function ActiveTreasures() {
 
     useEffect(() => {
         axios
-            .get(
-                "https://hidden-gems-backend.onrender.com/treasures/active-treasures"
-            )
+            .get("http://localhost:4000/treasures/active-treasures")
             .then((response) => {
                 setTreasures(response.data);
             });
